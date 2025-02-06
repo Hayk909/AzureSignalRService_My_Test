@@ -9,59 +9,72 @@ A lightweight real-time messaging service built with SignalR and ASP.NET Core, p
 - Swagger API documentation
 - Docker support
 - Health monitoring endpoint
+- Automated endpoint testing
 
 ## Tech Stack
 
-- ASP.NET Core 7.0
-- SignalR for real-time communication
-- Docker for containerization
-- Swagger for API documentation
+- ASP.NET Core 9.0
+- SignalR
+- Docker
+- Swagger/OpenAPI
+
+## Prerequisites
+
+- Docker
+- .NET SDK 9.0 (for development)
 
 ## Quick Start
 
-### Prerequisites
-- Docker
-- .NET SDK 7.0 (for development)
-
-### Running with Docker
+1. Clone the repository
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/nicksuomi/AzureSignalRService.git
+```
 
+2. Run with Docker:
+```bash
 # Run the service
 ./run.sh
 ```
 
-The service will be available at:
-- Web Interface: `http://localhost:3209/messenger`
-- Swagger UI: `http://localhost:3209/swagger`
-- API Endpoint: `http://localhost:3209/api/messenger`
+3. Access the application:
+   - Messenger UI: http://localhost:3209/messenger
+   - Swagger API: http://localhost:3209/swagger
+   - Health Check: http://localhost:3209/api/messenger/health
 
-### Development Setup
+## Development Setup
 
 1. Clone the repository
 2. Navigate to the src directory:
 ```bash
 cd src
+dotnet restore
 dotnet run
 ```
 
-## API Documentation
+## Testing
 
-See [API.md](API.md) for detailed integration instructions.
-
-## Project Structure
-
+Run the automated endpoint tests:
+```bash
+./test.sh
 ```
-.
-├── src/
-│   ├── Controllers/     # API endpoints (AzureSignalRService.Controllers)
-│   ├── Models/         # Data models (AzureSignalRService.Models)
-│   ├── Hubs/          # SignalR hubs (AzureSignalRService.Hubs)
-│   └── wwwroot/       # Static files
-├── Dockerfile          # Container configuration
-└── run.sh             # Run script
-```
+
+This will verify:
+- Container status
+- All endpoint responses
+- Redirect behaviors
+- WebSocket endpoint
+- Health check status
+
+
+## API Endpoints
+
+- `GET /` - Redirects to messenger interface
+- `GET /messenger` - Messenger interface
+- `GET /swagger` - API documentation
+- `GET /api/messenger/health` - Health check
+- `WS /messenger/hub` - SignalR WebSocket endpoint
+- `POST /api/messenger/send` - Send message endpoint
 
 ## Configuration
 
