@@ -36,5 +36,12 @@ app.MapHub<ChatHub>("/messenger/hub");
 app.MapGet("/messenger", () => Results.Redirect("/messenger/index.html"));
 app.MapGet("/", () => Results.Redirect("/messenger/index.html"));
 
+// CORS HANDLING / Because of problems with connecting I needed to add this cors-policy
+app.UseCors(policy =>
+    policy.WithOrigins("http://localhost:5000")
+          .AllowAnyHeader()
+          .AllowAnyMethod()
+          .AllowCredentials());
+
 app.Run();
 
