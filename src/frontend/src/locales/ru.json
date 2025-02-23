@@ -1,0 +1,9 @@
+{
+  "enter_nickname": "Введите никнейм",
+  "nickname": "Никнейм",
+  "enter": "Войти",
+  "chat": "Чат",
+  "enter_message": "Введите сообщение...",
+  "nickname_required": "Никнейм обязателен",
+  "nickname_min_length": "Никнейм должен быть хотя бы 3 символа"
+}

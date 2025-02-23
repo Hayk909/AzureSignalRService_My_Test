@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+		"baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@views/*": ["src/views/*"],
+      "@components/*": ["src/components/*"],
+      "@api/*": ["src/api/*"],
+      "@features/*": ["src/features/*"],
+      "@types/*": ["src/types/*"]
+    },
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "types": ["ionicons", "node"],
+    "resolveJsonModule": true
+  },
+  "include": ["src", "src/App.vue"],
+}

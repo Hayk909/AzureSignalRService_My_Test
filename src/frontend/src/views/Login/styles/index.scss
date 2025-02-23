@@ -1,0 +1,53 @@
+.error-container {
+  padding: 12px;
+  min-height: 20px;
+}
+
+.error-text {
+  display: block;
+  color: var(--ion-color-danger);
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.error-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transition-btn {
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* When button is disabled */
+.transition-btn:disabled {
+  opacity: 0.6;
+  background-color: var(--ion-color-medium);
+}
+
+/* Контейнер для поля ввода */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* GAP between label and input */
+  margin-bottom: 16px;
+}
+
+/* Style for IonLabel */
+.styled-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ion-color-medium);
+  padding-left: 12px;
+}
+
+/* Style for IonInput */
+.styled-input {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --inner-padding-top: 10px;
+  --inner-padding-bottom: 10px;
+  font-size: 16px;
+}
